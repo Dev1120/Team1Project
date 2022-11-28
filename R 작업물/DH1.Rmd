@@ -37,14 +37,14 @@ View(total)
 
 ```{r}
 # 시각화1
-# install.packages('PerformanceAnalytics')
+install.packages('PerformanceAnalytics')
 library(PerformanceAnalytics)
 chart.Correlation(total[ ,c(2:10) ])
 
 ```
 ```{r}
 # 시각화2
-# install.packages('corrgram')
+install.packages('corrgram')
 library(corrgram)
 corrgram(total[ ,c(2:10) ],lower.panel = panel.conf)
 
@@ -104,7 +104,7 @@ summary(fit)
 ## 3-2-1. 이상치의 여부 확인 및 교정
 
 ```{r}
-# install.packages("car")
+install.packages("car")
 library(car)
 
 par(mfrow=c(1,1))
