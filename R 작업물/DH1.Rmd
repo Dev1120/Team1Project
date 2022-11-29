@@ -305,6 +305,7 @@ summary(fit1_4)
 ```{r}
 fit2_1 <- lm(지역만족도 ~ class1 + 상권수 + 문화시설수 +병원수 +학교수  , data=total)
 summary(fit2_1)
+
 ```
 - Baseline모델의 설명력(Adjusted R-squared)은 0.3406 이다. 
 - Baseline모델의 유의확률(p-value)이 0.02117로 유의미한 모델이다.
@@ -325,7 +326,7 @@ summary(fit2_1)
 
 ```{r}
 # install.packages("car")
-# library(car)
+library(car)
 
 par(mfrow=c(1,1))
 influencePlot(fit2_1, id=list(method = "identify")) 
@@ -391,7 +392,7 @@ sqrt(vif(fit2_2))
 ### 4-2-4. 적당한 독립변수 선택
 
 ```{r}
-# library(leaps)
+library(leaps)
 region <- total2_2[ ,-c(1,2,9,10)]
 bbb<-regsubsets(`지역만족도`~ . , data = region)
 bbb1 <- summary(bbb)
@@ -495,6 +496,16 @@ summary(fit1_4)
 
 
 - 2차 단계적 성능 개선에서의 추가된 고려 변수들은 '버스정거장 수', '지하철역 수', '총 인구 수', '파출소 수', '아파트 수'이다.
+
+
+
+
+
+
+
+
+
+
 
 
 

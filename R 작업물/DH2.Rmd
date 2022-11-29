@@ -371,6 +371,8 @@ plot(fit22_2)
 ```{r}
 # install.packages("car")
 # library(car)
+
+
 sqrt(vif(fit22_2))
 
 ```
